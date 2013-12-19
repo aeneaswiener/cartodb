@@ -7,6 +7,7 @@ before_install:
   - psql -c "CREATE EXTENSION postgis" template_postgis
 
 install:
+  - sudo gem install bundler
   - sudo bundle install
   - cp config/app_config.yml.sample config/app_config.yml
   - cp config/database.yml.sample config/database.yml
