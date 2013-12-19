@@ -1,7 +1,7 @@
 language: ruby
 
 before_install:
-  - sudo add-apt-repository ppa:cartodb/gis
+  - sudo add-apt-repository --yes ppa:cartodb/gis
   - sudo apt-get update -q
   - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev gdal-bin libgdal-dev 
   - createdb template_postgis
