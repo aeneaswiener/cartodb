@@ -1,0 +1,25 @@
+language: ruby
+
+before_install:
+  - sudo apt-get update -q
+  - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec
+  - createdb template_postgis
+  - psql -c "CREATE EXTENSION postgis" template_postgis
+
+install:
+  - sudo bundle install
+  - cp config/app_config.yml.sample config/app_config.yml
+  - cp config/database.yml.sample config/database.yml
+  - pip install -r python_requirements.txt
+
+script:
+  - make check
+
+env:
+  #- NPROCS=1 JOBS=1
+
+notifications:
+  irc:
+    channels:
+      - "irc.freenode.org#cartodb"
+    use_notice: true
