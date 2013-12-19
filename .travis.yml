@@ -1,8 +1,9 @@
 language: ruby
 
 before_install:
+  - sudo add-apt-repository ppa:cartodb/gis
   - sudo apt-get update -q
-  - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev gdal-bin libgdal-dev
+  - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev gdal-bin libgdal-dev 
   - createdb template_postgis
   - psql -c "CREATE EXTENSION postgis" template_postgis
 
@@ -11,13 +12,14 @@ install:
   - sudo bundle install
   - cp config/app_config.yml.sample config/app_config.yml
   - cp config/database.yml.sample config/database.yml
-  - sudo CPLUS_INCLUDE_PATH=/usr/include/gdal C_INCLUDE_PATH=/usr/include/gdal pip install -r python_requirements.txt
+  - sudo pip install -r python_requirements.txt
 
 script:
   - make check
 
 env:
-  #- NPROCS=1 JOBS=1
+  # For python-gdal, see http://gis.stackexchange.com/questions/28966/python-gdal-package-missing-header-file-when-installing-via-pip/64244#64244
+  - CPLUS_INCLUDE_PATH=/usr/include/gdal C_INCLUDE_PATH=/usr/include/gdal 
 
 notifications:
   irc:
