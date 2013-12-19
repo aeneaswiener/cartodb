@@ -11,7 +11,7 @@ install:
   - sudo bundle install
   - cp config/app_config.yml.sample config/app_config.yml
   - cp config/database.yml.sample config/database.yml
-  - sudo pip install -r python_requirements.txt
+  - sudo CPLUS_INCLUDE_PATH=/usr/include/gdal C_INCLUDE_PATH=/usr/include/gdal pip install -r python_requirements.txt
 
 script:
   - make check
