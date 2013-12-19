@@ -2,7 +2,7 @@ language: ruby
 
 before_install:
   - sudo apt-get update -q
-  - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev
+  - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev gdal-bin
   - createdb template_postgis
   - psql -c "CREATE EXTENSION postgis" template_postgis
 
