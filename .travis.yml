@@ -5,9 +5,10 @@ before_install:
   - sudo apt-add-repository --yes ppa:ubuntugis/ubuntugis-testing
   - sudo apt-get update 
   - sudo apt-cache search gdal
+  - sudo apt-cache search libspatialite5
   - sudo apt-cache show libgdal-dev
   - sudo apt-cache show libgdal1h
-  - sudo apt-get install -q libgdal-dev libgdal1h 
+  - sudo apt-get install -q libspatialite5:amd64 libgdal-dev libgdal1h 
   - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev 
   - gdal-config --version
   # For python-gdal, see http://gis.stackexchange.com/questions/28966/python-gdal-package-missing-header-file-when-installing-via-pip/64244#64244
