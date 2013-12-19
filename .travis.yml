@@ -8,10 +8,12 @@ before_install:
   - sudo apt-cache search libspatialite5
   - sudo apt-cache show libgdal-dev
   - sudo apt-cache show libgdal1h
+  - sudo apt-cache show libgdal1
   - sudo apt-get install -q libgdal1h 
   - sudo apt-get install -q libgdal-dev 
   - sudo apt-cache search postgis
   - sudo apt-cache show postgresql-9.1-postgis-2.1
+  - sudo apt-cache show postgresql-9.0-postgis-2.1
   - sudo apt-get install -q postgresql-9.1-postgis-2.1
   - sudo apt-get install -q unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev 
   - gdal-config --version
