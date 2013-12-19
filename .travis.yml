@@ -5,7 +5,7 @@ before_install:
   - sudo apt-add-repository --yes ppa:ubuntugis/ubuntugis-testing
   - sudo apt-get update 
   - sudo apt-cache search gdal
-  - sudo apt-cache show ligdal-dev
+  - sudo apt-cache show libgdal-dev
   - sudo apt-cache show libgdal1h
   - sudo apt-get install -q libspatialite5 libgdal1h 
   - sudo apt-get install -q postgis unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev 
