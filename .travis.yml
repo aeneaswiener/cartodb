@@ -1,9 +1,9 @@
 
 before_install:
   - lsb_release -a
-  #- sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-unstable
-  - sudo apt-add-repository --remove --yes ppa:cartodb/gis
-  - sudo apt-add-repository --remove --yes ppa:cartodb/postgresql-9.3
+  - sudo apt-add-repository --yes ppa:ubuntugis/ubuntugis-unstable
+  #- sudo apt-add-repository --remove --yes ppa:cartodb/gis
+  #- sudo apt-add-repository --remove --yes ppa:cartodb/postgresql-9.3
   - sudo apt-get update 
   #- sudo apt-cache search gdal
   #- sudo apt-cache search libspatialite5
@@ -21,17 +21,18 @@ before_install:
   #- sudo apt-get install -q postgresql-9.1-postgis-2.1
   #- sudo apt-get remove --purge libgdal1h
   #- sudo apt-get remove --purge gdal-bin
-  - sudo apt-get install gdal-bin libgdal1 libgdal-dev
-  - sudo apt-get install -q postgresql-9.3-postgis-2.1
-  - sudo apt-get install postgresql-plpython-9.3
+  - sudo apt-get install gdal-bin # libgdal1 libgdal-dev
+  - sudo apt-cache show postgresql-9.1-postgis-2.0
+  - sudo apt-get install -q postgresql-9.1-postgis-2.0
+  - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
   - gdal-config --version
-  - ruby --version
-  #- sudo pip install -I gdal=1.10.0 || cat /home/travis/.pip/pip.log && false
+  - sudo pip install -I gdal=1.10.0 
   - createdb template_postgis
   - psql -c "CREATE EXTENSION postgis" template_postgis
 
 install:
+  - ruby --version
   - sudo gem install bundler
   # http://stackoverflow.com/questions/10916784/error-installing-debugger-linecache-in-ruby-1-9-3
   - gem install debugger-linecache -v '1.1.2' -- --with-ruby-include=$rvm_path/src/ruby-1.9.3-p484/
