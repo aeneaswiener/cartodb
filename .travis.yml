@@ -21,7 +21,7 @@ before_install:
   #- sudo apt-get install -q postgresql-9.1-postgis-2.1
   #- sudo apt-get remove --purge libgdal1h
   #- sudo apt-get remove --purge gdal-bin
-  - sudo apt-get install gdal-bin libgdal libgdal-dev
+  - sudo apt-get install gdal-bin libgdal1 libgdal-dev
   - sudo apt-get install -q postgresql-9.3-postgis-2.1
   - sudo apt-get install postgresql-plpython-9.3
   - sudo apt-get install -q unp zip ruby1.9.3 python-pip ruby-rspec libicu-dev 
