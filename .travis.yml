@@ -1,8 +1,8 @@
 
 before_install:
   - lsb_release -a
-  #- sudo apt-add-repository --yes --remove ppa:cartodb/gis
-  - sudo apt-add-repository --yes ppa:ubuntugis/ubuntugis-unstable
+  - sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-unstable
+  - sudo apt-add-repository --yes ppa:cartodb/gis
   - sudo apt-get update 
   - sudo apt-cache search gdal
   - sudo apt-cache search libspatialite5
@@ -17,7 +17,8 @@ before_install:
   #- sudo apt-cache show postgresql-9.0-postgis-2.1
   #- sudo apt-get install -q postgresql-9.1-postgis-2.1
   - sudo apt-get install -q postgresql-9.3-postgis-2.1
-  - sudo apt-get install -q unp zip postgresql-plpython-9.1 ruby1.9.3 python-pip ruby-rspec libicu-dev 
+  - sudo apt-get install postgresql-plpython-9.3
+  - sudo apt-get install -q unp zip ruby1.9.3 python-pip ruby-rspec libicu-dev 
   - gdal-config --version
   # For python-gdal, see http://gis.stackexchange.com/questions/28966/python-gdal-package-missing-header-file-when-installing-via-pip/64244#64244
   # CPLUS_INCLUDE_PATH=/usr/include/gdal C_INCLUDE_PATH=/usr/include/gdal 
