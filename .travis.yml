@@ -38,7 +38,6 @@ before_install:
   #- dpkg -L postgresql-9.1-postgis-2.0-scripts
   - find /usr/share/postgresql/9.1/contrib/postgis*
   - dpkg -l | grep postgis
-  - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
   #- sudo pip install -I gdal=1.10.0 
   #- sudo pip install -I gdal=1.10.0 || cat /home/travis/.pip/pip.log && false
@@ -47,6 +46,8 @@ before_install:
   - createdb template_postgis
   - psql -c "SELECT VERSION();" template_postgis
   - psql -f ./usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql template_postgis
+  - sudo apt-get install postgresql-9.1
+  - sudo apt-get install postgresql-plpython-9.1
 
 install:
   - ruby --version
