@@ -1,6 +1,8 @@
 
 before_install:
   - lsb_release -a
+  - sudo mv /etc/apt/sources.list.d/pgdg-source.list* /tmp
+  - sudo apt-get -qq remove postgis
   - sudo apt-add-repository --yes ppa:ubuntugis/ubuntugis-unstable
   #- sudo apt-add-repository --remove --yes ppa:cartodb/gis
   #- sudo apt-add-repository --remove --yes ppa:cartodb/postgresql-9.3
