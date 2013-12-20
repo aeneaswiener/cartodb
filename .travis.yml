@@ -26,6 +26,7 @@ before_install:
   - sudo apt-get install python-gdal
   - sudo apt-cache show postgresql-9.1-postgis-2.0
   - sudo apt-get install -q postgresql-9.1-postgis-2.0
+  - dpkg -l | grep postgis
   - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
   #- sudo pip install -I gdal=1.10.0 
@@ -33,7 +34,7 @@ before_install:
   - sudo apt-get install gdal-bin
   - gdal-config --version
   - createdb template_postgis
-  - psql -c "CREATE EXTENSION postgis" template_postgis
+  - psql -c "CREATE EXTENSION postgis VERSION '2.0.3'" template_postgis
 
 install:
   - ruby --version
