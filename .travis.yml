@@ -30,6 +30,7 @@ before_install:
   - sudo apt-get remove --purge postgresql-9.1-postgis-scripts
   - sudo apt-get install -q postgresql-9.1-postgis-2.0
   - sudo apt-get install -q postgresql-9.1-postgis-2.0-scripts
+  - find /usr/share/postgresql/9.1/contrib/postgis-2.0/
   - dpkg -l | grep postgis
   - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
@@ -38,7 +39,8 @@ before_install:
   - sudo apt-get install gdal-bin
   - gdal-config --version
   - createdb template_postgis
-  - psql -c "SELECT VERSION(); CREATE EXTENSION postgis" template_postgis
+  - psql -c "SELECT VERSION();" template_postgis
+  - psql -f ./usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql template_postgis
 
 install:
   - ruby --version
