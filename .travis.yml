@@ -5,11 +5,11 @@ before_install:
   - sudo apt-add-repository --remove --yes ppa:cartodb/gis
   - sudo apt-add-repository --remove --yes ppa:cartodb/postgresql-9.3
   - sudo apt-get update 
-  - sudo apt-cache search gdal
-  - sudo apt-cache search libspatialite5
-  - sudo apt-cache show libgdal-dev
-  - sudo apt-cache show libgdal1h
-  - sudo apt-cache show libgdal1
+  #- sudo apt-cache search gdal
+  #- sudo apt-cache search libspatialite5
+  #- sudo apt-cache show libgdal-dev
+  #- sudo apt-cache show libgdal1h
+  #- sudo apt-cache show libgdal1
   #- sudo apt-get remove --purge libgdal1h
   #- sudo apt-get remove --purge libgdal1
   #- sudo apt-get remove --purge libgdal1h
