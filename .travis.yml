@@ -29,8 +29,10 @@ before_install:
   - sudo apt-get remove --purge postgresql-9.2-postgis-scripts
   - sudo apt-get remove --purge postgresql-9.1-postgis-scripts
   - sudo apt-get install --reinstall -q postgresql-9.1-postgis-2.0
+  - sudo apt-get install postgis
   #- sudo apt-get install --reinstall -q postgresql-9.1-postgis-2.0-scripts
   - dpkg -L postgresql-9.1-postgis-2.0
+  - dpkg -L postgis
   #- dpkg -L postgresql-9.1-postgis-2.0-scripts
   - find /usr/share/postgresql/9.1/contrib/postgis*
   - dpkg -l | grep postgis
