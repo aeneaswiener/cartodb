@@ -1,18 +1,20 @@
 
 before_install:
   - lsb_release -a
-  - sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-unstable
+  #- sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-unstable
   - sudo apt-add-repository --yes ppa:cartodb/gis
+  - sudo apt-add-repository --yes ppa:cartodb/postgresql-9.3
   - sudo apt-get update 
   - sudo apt-cache search gdal
   - sudo apt-cache search libspatialite5
   - sudo apt-cache show libgdal-dev
   - sudo apt-cache show libgdal1h
   - sudo apt-cache show libgdal1
+  #- sudo apt-get remove --purge libgdal1h
+  - sudo apt-get remove --purge libgdal1
   - sudo apt-get remove --purge libgdal1h
-  - sudo apt-get install -q libgdal1
-  - sudo apt-get install -q libgdal-dev 
-  - sudo apt-cache search postgis
+  #- sudo apt-get install -q libgdal-dev 
+  #- sudo apt-cache search postgis
   - sudo apt-cache show postgresql-9.3-postgis-2.1
   #- sudo apt-cache show postgresql-9.1-postgis-2.1
   #- sudo apt-cache show postgresql-9.0-postgis-2.1
