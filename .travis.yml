@@ -26,7 +26,8 @@ before_install:
   - sudo apt-get install -q postgresql-9.1-postgis-2.0
   - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
-  - sudo pip install -I gdal=1.10.0 
+  #- sudo pip install -I gdal=1.10.0 
+  - sudo pip install -I gdal=1.10.0 || cat /home/travis/.pip/pip.log && false
   - sudo apt-get install gdal-bin
   - gdal-config --version
   - createdb template_postgis
