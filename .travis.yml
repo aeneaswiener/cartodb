@@ -9,6 +9,7 @@ before_install:
   - sudo apt-cache show libgdal-dev
   - sudo apt-cache show libgdal1h
   - sudo apt-cache show libgdal1
+  - sudo apt-get remove --purge libgdal1h
   - sudo apt-get install -q libgdal1
   - sudo apt-get install -q libgdal-dev 
   - sudo apt-cache search postgis
