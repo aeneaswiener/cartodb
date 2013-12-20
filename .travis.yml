@@ -21,7 +21,7 @@ before_install:
   #- sudo apt-get install -q postgresql-9.1-postgis-2.1
   #- sudo apt-get remove --purge libgdal1h
   #- sudo apt-get remove --purge gdal-bin
-  - sudo apt-get install gdal-bin # libgdal1 libgdal-dev
+  - sudo apt-get install gdal-bin libgdal-dev
   - sudo apt-cache show postgresql-9.1-postgis-2.0
   - sudo apt-get install -q postgresql-9.1-postgis-2.0
   - sudo apt-get install postgresql-plpython-9.1
