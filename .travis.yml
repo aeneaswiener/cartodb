@@ -1,8 +1,8 @@
 
 before_install:
   - lsb_release -a
-  - sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-testing
-  - sudo apt-add-repository --yes ppa:cartodb/gis
+  - sudo apt-add-repository --yes --remove ppa:cartodb/gis
+  - sudo apt-add-repository --remove --yes ppa:ubuntugis/ubuntugis-unstable
   - sudo apt-get update 
   - sudo apt-cache search gdal
   - sudo apt-cache search libspatialite5
