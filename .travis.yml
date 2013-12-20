@@ -28,9 +28,9 @@ before_install:
   - sudo apt-get remove --purge postgresql-9.3-postgis-scripts
   - sudo apt-get remove --purge postgresql-9.2-postgis-scripts
   - sudo apt-get remove --purge postgresql-9.1-postgis-scripts
-  - sudo apt-get install -q postgresql-9.1-postgis-2.0
-  - sudo apt-get install -q postgresql-9.1-postgis-2.0-scripts
-  - find /usr/share/postgresql/9.1/contrib/postgis-2.0/
+  - find /usr/share/postgresql/9.1/contrib/postgis*
+  - sudo apt-get install --reinstall -q postgresql-9.1-postgis-2.0
+  - sudo apt-get install --reinstall -q postgresql-9.1-postgis-2.0-scripts
   - dpkg -l | grep postgis
   - sudo apt-get install postgresql-plpython-9.1
   - sudo apt-get install -q unp zip ruby1.9.3 ruby1.9.1-dev python-pip ruby-rspec libicu-dev 
