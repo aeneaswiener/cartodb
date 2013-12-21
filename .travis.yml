@@ -46,8 +46,8 @@ before_install:
   - createdb template_postgis
   - psql -c "SELECT VERSION();" template_postgis
   - psql -f ./usr/share/postgresql/9.1/contrib/postgis-2.0/postgis.sql template_postgis
-  - sudo apt-get install postgresql-9.1
-  - sudo apt-get install postgresql-plpython-9.1
+  #- sudo apt-get install postgresql-9.1
+  #- sudo apt-get install postgresql-plpython-9.1
 
 install:
   - ruby --version
