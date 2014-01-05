@@ -109,7 +109,7 @@ defaults: &defaults
         extra_params:       { cache_policy: 'persist' }
         cdn_url:            ""
         tile_style_history: []
-        style_version:      "2.1.1"
+        style_version:      "2.1.0"
       infowindow:
         template_name:      "table/views/infowindow_light"
     background:
