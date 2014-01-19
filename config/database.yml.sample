@@ -1,6 +1,7 @@
 production:
   adapter: postgres
   encoding: unicode
+  sslmode: disable
   host: localhost
   port: 5432
   database: carto_db_production
@@ -10,6 +11,7 @@ production:
 staging:
   adapter: postgres
   encoding: unicode
+  sslmode: disable
   host: localhost
   port: 5432
   database: carto_db_staging
@@ -19,6 +21,7 @@ staging:
 development:
   adapter: postgres
   encoding: unicode
+  sslmode: disable
   host: localhost
   port: 5432
   database: carto_db_development
@@ -28,6 +31,7 @@ development:
 test:
   adapter: postgres
   encoding: unicode
+  sslmode: disable
   database: carto_db_test
   host: localhost
   port: 5432  
